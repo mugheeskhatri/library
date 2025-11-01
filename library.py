@@ -23,11 +23,11 @@ while True:
     if choice == "1":
         print("\nAvailable Books:")
         speak("Here are the available books")
-        for book in books:
-            print(f"- {book}")
+        for index, book in enumerate(books, start=1):
             engine.say(book)
-            engine.runAndWait() 
-            time.sleep(1.5)  
+            engine.runAndWait()
+            print(f"{index}. {book}")
+ 
 
     elif choice == "2":
         new_book = input("Enter book name to add: ").strip()
